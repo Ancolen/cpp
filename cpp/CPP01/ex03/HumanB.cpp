@@ -1,25 +1,18 @@
-
 #include "HumanB.hpp"
 
+HumanB::HumanB(std::string Name             ) : Name(Name), wp(nullptr) { }
+
+HumanB::HumanB(std::string Name, Weapon& obj) : Name(Name), wp(&obj   ) { }
 
 void HumanB::attack()
 {
-    std::cout << Name << " attacks with therir " << weapon << std::endl;
+    if(wp)
+        std::cout << Name << " attacks with therir " << wp->getType() << std::endl;
+    else
+        std::cout << Name << " dont have a weapon "  << wp->getType() << std::endl;
 }
 
-
-HumanB::HumanB(std::string Name)
+void HumanB::setWeapon(Weapon& Wp) 
 {
-    this->Name = Name;
-}
-
-HumanB::HumanB(std::string Name, Weapon obj)
-{
-    this->Name = Name;
-    this->weapon = obj.getType();
-}
-
-void HumanB::setWeapon(Weapon obj)
-{
-    this->weapon = obj.getType();
+    this->wp = &Wp; 
 }
