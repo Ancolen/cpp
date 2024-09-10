@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cctype>
-#include <algorithm>
+// #include <algorithm>
 #include "Harl.hpp"
 
 void Harl::info()
@@ -28,19 +28,20 @@ void Harl::error()
 
 Harl::Harl()
 {
-    strs[0] = "INFO";
-    strs[1] = "DEBUG";
-    strs[2] = "WARNING";
-    strs[3] = "ERROR";
-    functions[0] = &Harl::info;
-    functions[1] = &Harl::debug;
-    functions[2] = &Harl::warning;
-    functions[3] = &Harl::error;
+    strs     [0] = "INFO"         ;
+    strs     [1] = "DEBUG"        ;
+    strs     [2] = "WARNING"      ;
+    strs     [3] = "ERROR"        ;
+
+    functions[0] = &Harl::info    ;
+    functions[1] = &Harl::debug   ;
+    functions[2] = &Harl::warning ;
+    functions[3] = &Harl::error   ;
 }
 
 void toUpperCase(std::string& str) {
     std::transform(str.begin(), str.end(), str.begin(), [](unsigned char c) {
-        return std::toupper(c);
+        return std::toupper(c); // kendin toupper yaz 
     });
 }
 

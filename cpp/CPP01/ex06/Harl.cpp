@@ -28,14 +28,14 @@ void Harl::error()
 
 Harl::Harl()
 {
-    strs[0] = "DEBUG";
-    strs[1] = "INFO";
-    strs[2] = "WARNING";
-    strs[3] = "ERROR";
-    functions[0] = &Harl::info;
-    functions[1] = &Harl::debug;
-    functions[2] = &Harl::warning;
-    functions[3] = &Harl::error;
+    strs     [0] = "DEBUG"        ;
+    strs     [1] = "INFO"         ;
+    strs     [2] = "WARNING"      ;
+    strs     [3] = "ERROR"        ;
+    functions[0] = &Harl::info    ;
+    functions[1] = &Harl::debug   ;
+    functions[2] = &Harl::warning ;
+    functions[3] = &Harl::error   ;
 }
 
 void toUpperCase(std::string& str) {
@@ -50,27 +50,29 @@ void Harl::complain(std::string level)
 
     if(level.empty())
     {
-        std::cerr << "boş argüman" << std::endl;
-        return;
+           std::cerr << "boş argüman" << std::endl;
+           return;
     }
+
     int i = 0;
+
     while ( i < 4 && level.compare(strs[i]))
         i++;
 
-    switch (i)
+    switch(i)
     {
-    case 0:
-        info();
-        break;
-    case 1:
-        debug();
-        break;
-    case 2:
+    case 0 :
+        info   ();
+        break    ;
+    case 1 :
+        debug  ();
+        break    ;
+    case 2 :
         warning();
-        break;
-    case 3:
-        error();
-        break;
+        break    ;
+    case 3 :
+        error  ();
+        break    ;
     default:
         std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
         break;
