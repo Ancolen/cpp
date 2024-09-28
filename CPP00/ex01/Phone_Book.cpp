@@ -35,7 +35,7 @@ void Phone_Book::Add()
 
 	if(count < 8)
 		count++;
-	std::cout << "Contact added, count: " << count << ", id: " << id << std::endl;
+	//std::cout << "Contact added, count: " << count << ", id: " << id << std::endl;
 }
 
 void Phone_Book::Search()

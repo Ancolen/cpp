@@ -19,14 +19,14 @@ int main()
 
 	while(true)
 	{
-		std::cout << "işlem seç" << std::endl;
+		std::cout << "Select action." << std::endl;
 		std::getline(std::cin, process);
 		
 		if(process == "add")
 			pb.Add();
 		else if(process == "search")
 		{
-			std::cout << "kişi indeksi veya ismini seç, hepsi için enter" << std::endl;
+			std::cout << "Select index or name. For all contacts press enter." << std::endl;
 			std::getline(std::cin,process);
 
 			if(process.empty())
