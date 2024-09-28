@@ -1,7 +1,7 @@
 
 #include "Zombie.hpp"
 
-int main(int argc, char const *argv[])
+int main()
 {
 
     Zombie* zombs = zombieHorde(5,"akif");

@@ -46,8 +46,7 @@ void Phone_Book::Search()
 
 void Phone_Book::Search(int id)
 {
-	id;
-	if (id < 0 || id > 8 )
+	if (id < 0 || id >= 8 )
 	{
 		std::cout << "No such contact" << std::endl;
 		return;

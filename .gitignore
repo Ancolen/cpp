@@ -1,0 +1,38 @@
+# VS Code - Workspace settings
+.vscode/
+
+# VS Code - History & Backup files
+.history/
+*.code-workspace
+
+# MacOS işletim sistemi ile ilgili dosyalar (Eğer Mac kullanıyorsanız)
+.DS_Store
+
+# Windows işletim sistemi ile ilgili dosyalar
+Thumbs.db
+
+# Linux işletim sistemi ile ilgili dosyalar
+*~
+
+# Genel yapılandırma ve meta dosyaları
+*.log
+*.tmp
+
+# C++ projeleri için derleyiciye bağlı olarak derleme dosyaları
+*.out
+*.o
+*.obj
+*.exe
+*.dll
+*.pdb
+*.lib
+*.so
+*.a
+
+# CMake veya Meson gibi derleme sistemleri için
+CMakeFiles/
+CMakeCache.txt
+build/
+compile_commands.json
+meson-logs/
+

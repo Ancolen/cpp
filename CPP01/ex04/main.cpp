@@ -43,6 +43,7 @@ std::string findincontent(std::string content, std::string s1, std::string s2)
 
 int main(int ac, char **av)
 {
+    ac = 0;
     std::string fileName = av[1];
     std::string fileContent = readFileContents(fileName);
     if(fileContent.empty())
