@@ -1,16 +1,12 @@
 #include "Phone_Book.hpp"
-#include <algorithm>
 
 bool isnumeric(string str)
 {
 	for(size_t i = 0; i < str.length(); i++)
-	{
 		if(!isdigit(str[i]))
 			return false;
-	}
 	return true;
 }
-
 
 int main()
 {
@@ -22,11 +18,11 @@ int main()
 		std::cout << "Select action." << std::endl;
 		std::getline(std::cin, process);
 		
-		if(process == "add")
+		if(process == "ADD")
 			pb.Add();
-		else if(process == "search")
+		else if(process == "SEARCH")
 		{
-			std::cout << "Select index or name. For all contacts press enter." << std::endl;
+			std::cout << "Select index or name, for all contacts: press enter." << std::endl;
 			std::getline(std::cin,process);
 
 			if(process.empty())
@@ -36,7 +32,7 @@ int main()
 			else
 				pb.Search(process);
 		}
-		else if(process == "exit")
+		else if(process == "EXIT")
 		{
 			std::cout << "bye" << std::endl;
 			break;

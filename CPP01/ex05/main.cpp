@@ -1,8 +1,3 @@
-
-
-
-
-
 #include "Harl.hpp"
 
 

@@ -1,6 +1,3 @@
-
-
-
 NAME	= megaphone
 
 CC		= c++

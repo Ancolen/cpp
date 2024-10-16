@@ -1,6 +1,5 @@
 #include "Phone_Book.hpp"
 
-
 Phone_Book::Phone_Book() : id(0), count(0) { }
 
 void Phone_Book::Add()
@@ -59,7 +58,7 @@ void Phone_Book::Search(int id)
 		std::cout << "No such contact" << std::endl;
 		return;
 	}
-	contact[id].Write_All();
+	contact[id].Write_All_One();
 }
 
 
@@ -74,7 +73,7 @@ void Phone_Book::Search(string name)
 		if (strstr(tmp.c_str(), name.c_str()))
 		{
 			i++;
-			contact[id].Write_All();
+			contact[id].Write_All_One();
 		}
 		id++;
 	}
