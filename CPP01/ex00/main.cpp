@@ -2,7 +2,7 @@
 
 int main()
 {
-    newZombie("selam");
+    newZombie  ("hi" );
     randomChump("hey");
     return 0;
 }

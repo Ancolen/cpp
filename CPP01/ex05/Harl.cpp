@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cctype>
-// #include <algorithm>
 #include "Harl.hpp"
 
 void Harl::info()
@@ -39,28 +38,23 @@ Harl::Harl()
     functions[3] = &Harl::error   ;
 }
 
-void toUpperCase(std::string& str) {
-    std::transform(str.begin(), str.end(), str.begin(), [](unsigned char c) {
-        return std::toupper(c); // kendin toupper yaz 
-    });
-}
-
 void Harl::complain(std::string level)
 {
-    toUpperCase(level);
+
+    std::cout << level << std::endl;
 
     if(level.empty())
     {
-        std::cerr << "boş argüman" << std::endl;
+        std::cerr << "empyt argument" << std::endl;
         return;
     }
     int i = -1;
-    while ( i < 4 && level.compare(strs[i++]));
+    while ( i < 4 && level.compare(this->strs[i++]));
 
     std::cout << i << std::endl;
 
-    if(i >= 4 || i < 0)
+    if(i >= 5 || i < 0)
         std::cerr << "argümana uygun işlev yok " << std::endl;
     else
-        (this->*functions[i])();
+        (this->*functions[i-1])();
 }

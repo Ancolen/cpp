@@ -11,9 +11,9 @@ private:
     std::string Voice;
 public:
     void announce(void);
-    Zombie(std::string name);
+    Zombie (std::string name);
     ~Zombie();
 };
 
-    Zombie* newZombie(std::string Name);
-    void randomChump(std::string name);
+    Zombie* newZombie  (std::string Name);
+    void    randomChump(std::string name);

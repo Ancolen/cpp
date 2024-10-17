@@ -9,11 +9,11 @@ private:
     std::string strs[4]                  ;
     typedef void (Harl::*HarlFunc)(void) ;
     HarlFunc functions[4]                ;
-    void info   ()                       ;
-    void debug  ()                       ;
-    void warning()                       ;
-    void error  ()                       ;
+    void info    ()                      ;
+    void debug   ()                      ;
+    void warning ()                      ;
+    void error   ()                      ;
 public:
-    Harl        ()                       ;
+    Harl         ()                      ;
     void complain(std::string level)     ;
 };

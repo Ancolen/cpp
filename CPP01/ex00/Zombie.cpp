@@ -8,10 +8,10 @@ Zombie::Zombie(std::string Name)
 }
 void Zombie::announce(void)
 {
-    std::cout << Name << " " << Voice << std::endl; 
+    std::cout << Name << " "  << Voice          << std::endl; 
 }
 
 Zombie::~Zombie()
 {
-    std::cout << Name << ": " << "öldüm ben alla emanet" << std::endl;
+    std::cout << Name << ": " << "im dieingggg" << std::endl;
 }

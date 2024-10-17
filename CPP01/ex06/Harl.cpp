@@ -38,26 +38,23 @@ Harl::Harl()
     functions[3] = &Harl::error   ;
 }
 
-void toUpperCase(std::string& str) {
-    std::transform(str.begin(), str.end(), str.begin(), [](unsigned char c) {
-        return std::toupper(c);
-    });
-}
-
 void Harl::complain(std::string level)
 {
-    toUpperCase(level);
+
+    std::cout << level << std::endl;
 
     if(level.empty())
     {
-           std::cerr << "boş argüman" << std::endl;
+           std::cerr << "empty argument" << std::endl;
            return;
     }
 
     int i = 0;
 
-    while ( i < 4 && level.compare(strs[i]))
+    while ( i < 4 && level.compare(this->strs[i]))
         i++;
+
+    std::cout << i << std::endl;
 
     switch(i)
     {

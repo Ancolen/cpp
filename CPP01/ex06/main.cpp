@@ -3,11 +3,11 @@
 
 int main()
 {
-    Harl harl                             ;
-    harl.complain("info"                ) ;
-    harl.complain("debug"               ) ;
-    harl.complain("warning"             ) ;
-    harl.complain("error"               ) ;
-    harl.complain(""                    ) ;
-    harl.complain("işçisin sen işçi kal") ;
+    Harl harl                                        ;
+    harl.complain("INFO"                           ) ;
+    harl.complain("DEBUG"                          ) ;
+    harl.complain("WARNING"                        ) ;
+    harl.complain("ERROR"                          ) ;
+    harl.complain(""                               ) ;
+    harl.complain("You are a worker, stay a worker") ;
 }

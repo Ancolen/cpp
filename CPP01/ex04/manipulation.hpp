@@ -12,17 +12,17 @@ class manipulation
 {
 private:
     
-    string fileName;
-    string s1;
-    string s2;
-    string content;
+    std::ifstream  __f     ;
+    
+    string         fileName;
+    string         s1      ;
+    string         s2      ;
+    string         content ;
 
-    std::ifstream __f;
-
-    void openFile();
-    void fileContent();
-    void findAndReplace();
-    void createNewFile();
+    void openFile      ()  ;
+    void fileContent   ()  ;
+    void findAndReplace()  ;
+    void createNewFile ()  ;
 
 public:
 
