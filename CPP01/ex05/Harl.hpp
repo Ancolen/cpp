@@ -15,5 +15,5 @@ private:
     void error   ()                      ;
 public:
     Harl         ()                      ;
-    void complain(std::string level);
+    void complain(std::string level     );
 };

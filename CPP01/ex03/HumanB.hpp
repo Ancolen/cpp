@@ -6,6 +6,7 @@ class HumanB
 private:
     std::string Name                               ;
     Weapon*     wp                                 ;
+
 public:
     void attack    (                             ) ;
     void setWeapon (Weapon&     wp               ) ;

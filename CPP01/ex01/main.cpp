@@ -4,7 +4,7 @@
 int main()
 {
 
-    Zombie* zombs = zombieHorde(5,"akif");
+    Zombie* zombs = zombieHorde(5,"tot");
     delete []zombs;
     return 0;
 }
