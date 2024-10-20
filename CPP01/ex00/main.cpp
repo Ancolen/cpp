@@ -2,7 +2,8 @@
 
 int main()
 {
-    newZombie  ("hi" );
+    Zombie* zomb = newZombie  ("hi" );
+    delete zomb;
     randomChump("hey");
     return 0;
 }
