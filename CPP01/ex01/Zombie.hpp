@@ -6,8 +6,8 @@
 class Zombie
 {
 private:
-    std::string Name;
     std::string Voice;
+    std::string Name;
 public:
     void SetNameAndVoice(std::string name, std::string Voice);
     void announce();

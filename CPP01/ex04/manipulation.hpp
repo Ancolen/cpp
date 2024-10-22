@@ -27,6 +27,6 @@ private:
 public:
 
     manipulation(string fileName, string s1, string s2);
-
+    ~manipulation();   
     void replaceFile();
 };
