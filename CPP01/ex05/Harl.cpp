@@ -1,5 +1,3 @@
-#include <iostream>
-#include <cctype>
 #include "Harl.hpp"
 
 void Harl::info()
@@ -45,7 +43,7 @@ void Harl::complain(std::string level)
 
     if(level.empty())
     {
-        std::cerr << "empyt argument" << std::endl;
+        std::cout << "empyt argument" << std::endl;
         return;
     }
     int i = -1;
@@ -54,7 +52,9 @@ void Harl::complain(std::string level)
     std::cout << i << std::endl;
 
     if(i >= 5 || i < 0)
-        std::cerr << "argümana uygun işlev yok " << std::endl;
-    else
-        (this->*functions[i-1])();
+    {
+        std::cout << "argümana uygun işlev yok " << std::endl;
+        return ;
+    } 
+    (this->*functions[i-1])();
 }

@@ -1,6 +1,3 @@
-#include <iostream>
-#include <cctype>
-#include <algorithm>
 #include "Harl.hpp"
 
 void Harl::info()
@@ -45,7 +42,7 @@ void Harl::complain(std::string level)
 
     if(level.empty())
     {
-           std::cerr << "empty argument" << std::endl;
+           std::cout << "empty argument" << std::endl;
            return;
     }
 
@@ -60,12 +57,18 @@ void Harl::complain(std::string level)
     {
     case 0 :
         info   ();
-        break    ;
+        debug  ();
+        warning();
+        error  ();
+        break;
     case 1 :
         debug  ();
+        warning();
+        error  ();
         break    ;
     case 2 :
         warning();
+        error  ();
         break    ;
     case 3 :
         error  ();

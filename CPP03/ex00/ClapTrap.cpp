@@ -18,7 +18,7 @@ void ClapTrap::attack(const std::string& target)
 {
     if(this->getHitPoints() <= 0 || this->getEnergyPoints() <= 0)
     {
-        std::cerr << "ClapTrap " << this->Name << " cannot attack, no hit point or energy left" << std::endl;
+        std::cout << "ClapTrap " << this->Name << " cannot attack, no hit point or energy left" << std::endl;
         return;
     }
     setEnergyPoints(getEnergyPoints() - 1);
@@ -31,13 +31,13 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
     if(this->getHitPoints() <= 0)
     {
-        std::cerr << "ClapTrap " << this->Name << " cannot repair, it's already dead!" << std::endl;
+        std::cout << "ClapTrap " << this->Name << " cannot repair, it's already dead!" << std::endl;
         return;  
     }
 
     if(this->getEnergyPoints() <= 0)
     {
-        std::cerr << "ClapTrap " << this->Name << " cannot repair, no energy left" << std::endl;
+        std::cout << "ClapTrap " << this->Name << " cannot repair, no energy left" << std::endl;
         return;
     }
     setEnergyPoints(getEnergyPoints() - 1);
