@@ -1,33 +1,33 @@
+NAME = Fixed
 
-NAME	= Fixed
+CC = c++
 
-CC		= c++
-FLAGS	= -Wall -Wextra -Werror -std=c++98
-RM		= rm -rf
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-#Colors:
-GREEN		=	\e[92;5;118m
-YELLOW		=	\e[93;5;226m
-GRAY		=	\e[33;2;37m
-RESET		=	\e[0m
-CURSIVE		=	\e[33;3m
+GREEN = \033[1;33m
+RESET = \033[0m
 
+SRC = 	main.cpp\
+		Fixed.cpp\
+
+OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME):
-	@printf "$(CURSIVE)$(GRAY) 	- Compiling $(NAME)... $(RESET)\n"
-	@ $(CC) $(FLAGS) *.cpp -o $(NAME)
-	@printf "$(GREEN)    - Executable ready.\n$(RESET)"
+$(NAME) : $(OBJ)
+	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+%.o: %.cpp
+	@echo "$(GREEN) Compiling: $< $(RESET)"
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@$(RM) $(NAME)
-	@printf "$(YELLOW)    - Executable removed.$(RESET)\n"
+	@rm -rf $(OBJ)
 
-fclean:
-	@$(RM) $(NAME)
-	@printf "$(YELLOW)    - Executable removed.$(RESET)\n"
+fclean: clean
+	@rm -rf $(NAME)
+	@echo "$(GREEN)\nFixed Objects Deleted!\n$(RESET)"
 
-re: clean all
+re: fclean all
 
-.PHONY: all clean re
+.PHONY: all clean fclean re

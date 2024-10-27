@@ -2,7 +2,7 @@
 
 
 
-#include <iostream>
+
 #include "Fixed.hpp"
 
 
@@ -30,4 +30,7 @@ int Fixed::getRawBits( ) const
     return this->nbr;
 }
 
-//set func
+void Fixed::setRawBits(int const raw)
+{
+    this->nbr = raw;
+}

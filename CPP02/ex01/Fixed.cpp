@@ -2,7 +2,6 @@
 
 
 
-#include <iostream>
 #include "Fixed.hpp"
 
 Fixed::Fixed () : nbr(0) { std::cout << "Default constructor called" << std::endl; }
@@ -10,10 +9,10 @@ Fixed::Fixed () : nbr(0) { std::cout << "Default constructor called" << std::end
 Fixed::Fixed (int value) : nbr(value << nbrDigit)
 { std::cout << "Int constructor called"     << std::endl; }
 
-Fixed::Fixed (float value) : nbr(static_cast<int>(value * (1 << nbrDigit)))
+Fixed::Fixed (float value) : nbr(roundToInt(value * (1 << nbrDigit)))
 { std::cout << "Float constructor alled"    << std::endl; }
 
-Fixed::~Fixed()          { std::cout << "destructor called"          << std::endl; }
+Fixed::~Fixed() { std::cout << "destructor called"          << std::endl; }
 
 Fixed::Fixed(const Fixed& copy)
 {
@@ -55,4 +54,8 @@ std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
 {
     os << fixed.toFloat();
     return os;
+}
+
+int roundToInt(float value) {
+    return (value > 0) ? (int)(value + 0.5f) : (int)(value - 0.5f);
 }
