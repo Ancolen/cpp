@@ -3,18 +3,16 @@
 #include "ClapTrap.hpp"
 
 
-ClapTrap::ClapTrap()
-{
-    
-}
+ClapTrap::ClapTrap() { }
+
 ClapTrap::ClapTrap(std::string name) : Name(name), hitPoints(10), energyPoints(10), attackDamage(0), isAlive(true)
 {
-    std::cout << "ctor called: " << this->Name << std::endl;
+    std::cout << "ClapTrap ctor called: " << this->Name << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "destructor called: " << this->Name << std::endl;
+    std::cout << "ClapTrap destructor called: " << this->Name << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& copy)

@@ -4,13 +4,15 @@
 
 #include <iostream>
 
-#define MAX_HIT_POINTS    10
-#define MAX_ATTACK_DAMAGE 10
-#define MAX_ENERGY_POINTS 10
+#define MAX_HIT_POINTS    100
+#define MAX_ATTACK_DAMAGE 100
+#define MAX_ENERGY_POINTS 100
 
 class ClapTrap
 {
 private:
+
+protected:
     std::string Name;
 
     int hitPoints ;
@@ -18,10 +20,11 @@ private:
     int attackDamage ;
 
     bool isAlive;
-public:
 
+public:
     ClapTrap();
     ClapTrap(std::string Name);
+   
     ClapTrap(const ClapTrap& copy);
 
     ClapTrap& operator=(const ClapTrap& other);

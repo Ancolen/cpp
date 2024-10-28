@@ -12,7 +12,6 @@
 
 int main()
 {
-    // Create a ClapTrap object
     ClapTrap clap("Clapster");
 
     // Set attack damage

@@ -1,4 +1,4 @@
-NAME = ClapTrap
+NAME = ScavTrap
 
 CC = c++
 
@@ -8,7 +8,8 @@ GREEN = \033[1;33m
 RESET = \033[0m
 
 SRC = 	main.cpp\
-		ClapTrap.cpp
+		ClapTrap.cpp\
+		ScavTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
