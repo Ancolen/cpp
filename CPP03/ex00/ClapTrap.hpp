@@ -13,7 +13,7 @@ class ClapTrap
 private:
     std::string Name;
 
-    int hitPoints ;
+    int hitPoints    ;
     int energyPoints ;
     int attackDamage ;
 
