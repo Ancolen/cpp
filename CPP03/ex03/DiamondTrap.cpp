@@ -4,19 +4,21 @@
 
 DiamondTrap::DiamondTrap() : ClapTrap("Default_clap_name"), Name("Default")
 {
-    hitPoints = FragTrap::DefaultHitPoint;
-    energyPoints = ScavTrap::DefaultEnergyPoint;
-    attackDamage = FragTrap::DefaultAttackPoint;
-    isAlive = true;
+    hitPoints    = FragTrap::hitPoints;
+    energyPoints = ScavTrap::energyPoints;
+    attackDamage = FragTrap::attackDamage;
+    isAlive      = true;
+
     std::cout << "DiamondTrap default ctor called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), Name(name)
 {
-    hitPoints = FragTrap::hitPoints;
+    hitPoints    = FragTrap::hitPoints;
     energyPoints = ScavTrap::energyPoints;
     attackDamage = FragTrap::attackDamage;
-    isAlive = true;
+    isAlive      = true;
+
     std::cout << "DiamondTrap ctor called" << std::endl;
 }
 
@@ -38,7 +40,6 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other)
         isAlive = other.isAlive;
     }
     return *this;
-    
 }
 
 

@@ -6,21 +6,15 @@
 
 FragTrap::FragTrap() : ClapTrap("Unnamed FragTrap")
 {
-    this->DefaultHitPoint = 100;
-    this->DefaultAttackPoint = 30;
-
-    setHitPoints(this->DefaultHitPoint);
+    setHitPoints(100);
     setEnergyPoints(100);
-    setAttackDamage(this->DefaultAttackPoint);
+    setAttackDamage(30);
 
     std::cout << "FragTrap default ctor called" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-    this->DefaultAttackPoint = 30;
-    this->DefaultHitPoint = 100;
-    
     setHitPoints(100);
     setEnergyPoints(100);
     setAttackDamage(30);

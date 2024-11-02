@@ -1,11 +1,11 @@
 
+
+#pragma once
+
 #include "ClapTrap.hpp"
 
 class ScavTrap : virtual public ClapTrap
 {
-protected:
-    int DefaultEnergyPoint;
-
 public:
     ScavTrap();
     ScavTrap(std::string name);

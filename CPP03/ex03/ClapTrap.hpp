@@ -10,8 +10,6 @@
 
 class ClapTrap
 {
-private:
-
 protected:
     std::string Name;
 

@@ -1,13 +1,10 @@
 
+#pragma once
 
 #include "ScavTrap.hpp"
 
 class FragTrap : virtual public ClapTrap
 {
-protected:
-    int DefaultHitPoint    ;
-    int DefaultAttackPoint ;
-    
 public:
     FragTrap();
     FragTrap(std::string name);
