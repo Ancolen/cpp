@@ -45,7 +45,6 @@ FragTrap& FragTrap::operator=(const FragTrap& other)
     return *this;
 }
 
-
 void FragTrap::highFiveGuys(void)
 {
     if (!isAlive)

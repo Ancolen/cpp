@@ -8,17 +8,19 @@
 
 ScavTrap::ScavTrap() : ClapTrap("Unnamed ClapTrap")
 {
-    setHitPoints(100);
-    setEnergyPoints(50);
-    setAttackDamage(20);
+    setAttackDamage(20 );
+    setEnergyPoints(50 );
+    setHitPoints   (100);
+    
     std::cout << "ScavTrap default ctor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) 
 {
-    setHitPoints(100);
-    setEnergyPoints(50);
-    setAttackDamage(20);
+    setAttackDamage(20 );
+    setEnergyPoints(50 );
+    setHitPoints   (100);
+
     std::cout << "ScavTrap ctor called" << std::endl;
 }
 

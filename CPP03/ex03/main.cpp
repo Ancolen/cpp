@@ -1,4 +1,5 @@
 #include "DiamondTrap.hpp"
+#include "ClapTrap.hpp"
 #include <iostream>
 
 int main()
@@ -26,4 +27,5 @@ int main()
     std::cout << "\n--- Destruction Begins ---\n";
 
     return 0;
+
 }
