@@ -3,7 +3,10 @@
 #include "ClapTrap.hpp"
 
 
-ClapTrap::ClapTrap() { }
+ClapTrap::ClapTrap() : Name("default name")
+{
+    std::cout << "ClapTrap default ctor called" << std::endl;
+}
 
 ClapTrap::ClapTrap(std::string name) : Name(name), hitPoints(10), energyPoints(10), attackDamage(0), isAlive(true)
 {

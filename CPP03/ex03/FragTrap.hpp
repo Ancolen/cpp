@@ -5,8 +5,8 @@
 class FragTrap : virtual public ClapTrap
 {
 protected:
-    int DefaultHitPoint = 100;
-    int DefaultAttackPoint = 30;
+    int DefaultHitPoint    ;
+    int DefaultAttackPoint ;
     
 public:
     FragTrap();

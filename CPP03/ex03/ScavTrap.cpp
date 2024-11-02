@@ -8,9 +8,10 @@
 
 ScavTrap::ScavTrap() : ClapTrap("Unnamed ClapTrap")
 {
+    this->DefaultEnergyPoint = 50;
     setHitPoints(100);
-    setEnergyPoints(50);
-    setAttackDamage(20);
+    setEnergyPoints(this->DefaultEnergyPoint);
+    setAttackDamage(30);
     std::cout << "ScavTrap default ctor called" << std::endl;
 }
 

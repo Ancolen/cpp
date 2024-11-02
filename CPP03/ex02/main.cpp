@@ -17,7 +17,7 @@ int main()
 
     std::cout << "\nTesting repeated attacks and energy depletion...\n";
     FragTrap energyTest("Energy Test");
-    for (int i = 0; i < 50; ++i)   // Enerji bitene kadar saldır
+    for (int i = 0; i < 100; ++i)   // Enerji bitene kadar saldır
     {
         energyTest.attack("Energy Dummy");
     }

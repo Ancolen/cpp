@@ -21,7 +21,7 @@ int main()
     scav.attack("Test Dummy"); // İlk saldırı (başlangıç değerleriyle)
     scav.guardGate();          // Gate keeper moduna geçiş
     std::cout << "---------------------------" << std::endl;
-
+    
     // Hasar alma, enerji kontrolü, ve onarım testi
     std::cout << "Testing damage, repair, and energy" << std::endl;
     scav.takeDamage(30);       // ScavTrap'in bir miktar hasar almasını test et

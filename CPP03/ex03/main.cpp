@@ -3,7 +3,7 @@
 
 int main()
 {
-    std::cout << "\n--- Creating DiamondTrap 'diamond' ---\n";
+    std::cout << "--- Creating DiamondTrap 'diamond' ---\n";
     DiamondTrap diamond("diamond");
 
     std::cout << "\n--- Testing DiamondTrap 'diamond' Properties ---\n";

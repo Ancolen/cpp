@@ -3,7 +3,10 @@
 #include "ClapTrap.hpp"
 
 
-ClapTrap::ClapTrap() { }
+ClapTrap::ClapTrap() : Name("default name"), hitPoints(10), energyPoints(10), attackDamage(0), isAlive(true)
+{
+    std::cout << "default ctor called: " << this->Name << std::endl;
+}
 
 ClapTrap::ClapTrap(std::string name) : Name(name), hitPoints(10), energyPoints(10), attackDamage(0), isAlive(true)
 {
@@ -67,7 +70,7 @@ void ClapTrap::beRepaired(unsigned int amount)
     setEnergyPoints(getEnergyPoints() - 1);
     setHitPoints(getHitPoints() + amount);
 
-    std::cout << "ClapTrap " << this->Name << " has been repaired" << std::endl;
+    std::cout << "ClapTrap " << this->Name << " has been repaired: " << amount << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)

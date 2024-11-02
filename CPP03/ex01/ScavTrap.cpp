@@ -6,7 +6,13 @@
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() { }
+ScavTrap::ScavTrap() : ClapTrap("default name")
+{
+    setHitPoints(100);
+    setEnergyPoints(50);
+    setAttackDamage(20);
+    std::cout << "ScavTrap default ctor called" << std::endl;
+}
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) 
 {

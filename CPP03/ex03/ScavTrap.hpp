@@ -4,7 +4,7 @@
 class ScavTrap : virtual public ClapTrap
 {
 protected:
-    int DefaultEnergyPoint = 50;
+    int DefaultEnergyPoint;
 
 public:
     ScavTrap();

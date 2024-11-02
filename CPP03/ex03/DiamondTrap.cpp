@@ -11,7 +11,7 @@ DiamondTrap::DiamondTrap() : ClapTrap("Default_clap_name"), Name("Default")
     std::cout << "DiamondTrap default ctor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : Name(name), ClapTrap(name + "_clap_name")
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), Name(name)
 {
     hitPoints = FragTrap::hitPoints;
     energyPoints = ScavTrap::energyPoints;

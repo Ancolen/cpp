@@ -10,10 +10,10 @@ FragTrap::FragTrap() : ClapTrap("Unnamed FragTrap")
     setEnergyPoints(100);
     setAttackDamage(30);
 
-    std::cout << "FragTrap ctor called" << std::endl;
+    std::cout << "FragTrap default ctor called" << std::endl;
 }
 
-FragTrap::FragTrap(std::string name)
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
     setHitPoints(100);
     setEnergyPoints(100);
@@ -55,4 +55,3 @@ void FragTrap::highFiveGuys(void)
     else
         std::cout << "High Five, guys!" << std::endl;
 }
-

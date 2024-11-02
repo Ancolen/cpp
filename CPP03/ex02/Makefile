@@ -1,4 +1,4 @@
-NAME = ScavTrap
+NAME = FragTrap
 
 CC = c++
 
@@ -10,7 +10,7 @@ RESET = \033[0m
 SRC = 	main.cpp\
 		ClapTrap.cpp\
 		ScavTrap.cpp\
-		FragTrap.CPP
+		FragTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
