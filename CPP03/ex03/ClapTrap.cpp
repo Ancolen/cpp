@@ -118,8 +118,6 @@ void ClapTrap::setHitPoints(int nbr)
 
 void ClapTrap::setAttackDamage(int nbr)
 {
-    static int a = 0;
-    std::cout << a++ << std::endl; 
     this->attackDamage = clamp(nbr, 0, MAX_ATTACK_DAMAGE);
 }
 int clamp(int value, int minVal, int maxVal) {
