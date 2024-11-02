@@ -76,7 +76,7 @@ Fixed Fixed::operator/(const Fixed& other) {
 }
 
 Fixed& Fixed::operator++() {
-    this->setRawBits(this->getRawBits() + 10);
+    this->setRawBits(this->getRawBits() + 1);
     return *this;
 }
 
