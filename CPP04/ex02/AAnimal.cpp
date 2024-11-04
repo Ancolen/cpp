@@ -31,7 +31,7 @@ AAnimal::~AAnimal()
 
 void AAnimal::makeSound()
 {
-    std::cout<< this->voice << std::endl;
+    std::cout << this->voice << std::endl;
 }
 
 std::string AAnimal::getType()

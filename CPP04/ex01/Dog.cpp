@@ -42,6 +42,17 @@ Dog::~Dog()
     std::cout << "Dog destructor called" << std::endl;
 }
 
+void Dog::setBrainIdeas()
+{
+    for(int i = 0; i < 100; i++)
+        this->brain->setIdeas("Idea #" + std::to_string(i), i); 
+}
+
+std::string Dog::getBrainIdeas(int index)
+{
+    return this->brain->getIdea(index);
+}
+
 void Dog::makeSound()
 {
     std::cout << this->voice << std::endl;

@@ -4,6 +4,7 @@ Animal::Animal()
 {
     this->type  = "Animal"      ;
     this->voice = "Animal sound";
+    
     std::cout << "Animal ctor called" << std::endl;
 }
 

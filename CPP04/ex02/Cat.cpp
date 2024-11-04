@@ -41,3 +41,14 @@ void Cat::makeSound()
 {
     std::cout << this->voice << std::endl;
 }
+
+void Cat::setBrainIdeas()
+{
+    for(int i = 0; i < 100; i++)
+        this->brain->setIdeas("Idea #" + std::to_string(i), i); 
+}
+
+std::string Cat::getBrainIdeas(int index)
+{
+    return this->brain->getIdea(index);
+}

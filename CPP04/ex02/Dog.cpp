@@ -2,7 +2,6 @@
 
 
 
-#include "AAnimal.hpp"
 #include "Dog.hpp"
 
 Dog::Dog()
@@ -40,6 +39,17 @@ Dog::~Dog()
 {
     delete this->brain;
     std::cout << "Dog destructor called" << std::endl;
+}
+
+void Dog::setBrainIdeas()
+{
+    for(int i = 0; i < 100; i++)
+        this->brain->setIdeas("Idea #" + std::to_string(i), i); 
+}
+
+std::string Dog::getBrainIdeas(int index)
+{
+    return this->brain->getIdea(index);
 }
 
 void Dog::makeSound()

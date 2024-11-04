@@ -6,21 +6,37 @@
 
 int main()
 {
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    
-    delete j;//should not create a leak
-    delete i;
+    const int animalCount = 6; // Örnek olarak 6 tane hayvan oluşturalım.
+    Animal* animals[animalCount];
 
-    Animal *animals[10]; 
-    for (int i = 0; i < 5; ++i) {
-        animals[i] = new Dog();
+    // Hayvanları oluştur.
+    for (int i = 0; i < animalCount; i++) {
+        if (i < animalCount / 2) {
+            animals[i] = new Dog();
+        } else {
+            animals[i] = new Cat();
+        }
     }
-    for (int i = 5; i < 10; ++i) {
-        animals[i] = new Cat();
+
+    // Hayvanları kullan ve fikirleri ayarlayın.
+    for (int i = 0; i < animalCount; i++) {
+        std::cout << animals[i]->getType() << " makes sound: ";
+        animals[i]->makeSound();
+        
+        // Her hayvana fikirlerini ayarlayın.
+        if (Dog* dog = dynamic_cast<Dog*>(animals[i])) {
+            dog->setBrainIdeas(); // Fikirleri ayarlayın
+            std::cout << "Dog ideas: " << dog->getBrainIdeas(0) << ", " << dog->getBrainIdeas(1) << std::endl; // İlk iki fikri göster
+        } else if (Cat* cat = dynamic_cast<Cat*>(animals[i])) {
+            cat->setBrainIdeas(); // Fikirleri ayarlayın
+            std::cout << "Cat ideas: " << cat->getBrainIdeas(0) << ", " << cat->getBrainIdeas(1) << std::endl; // İlk iki fikri göster
+        }
     }
-    for (int i = 0; i < 10; ++i) {
+
+    // Hayvanları sil.
+    for (int i = 0; i < animalCount; i++) {
         delete animals[i];
     }
+
     return 0;
 }

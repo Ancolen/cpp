@@ -18,6 +18,6 @@ public:
     virtual ~AAnimal();
 
     virtual void makeSound() = 0;
-    
+
     std::string getType();
 };

@@ -5,7 +5,7 @@
 WrongAnimal::WrongAnimal()
 {
     this->type = "WrongAnimal";
-    //this->voice = "WrongAnimal sound";
+    this->voice = "WrongAnimal sound";
     std::cout << "WrongAnimal ctor called" << std::endl;   
 }
 
@@ -21,7 +21,7 @@ WrongAnimal &WrongAnimal::operator=(const WrongAnimal &other)
     if(this != &other)
     {
         this->type = other.type;
-        //this->voice = other.voice;
+        this->voice = other.voice;
     }
     return *this;
 }
@@ -33,10 +33,10 @@ WrongAnimal::~WrongAnimal()
 
 std::string WrongAnimal::getType()
 {
-    return this->type;
+    return "Wrong Animal type";
 }
 
 void WrongAnimal::makeSound()
 {
-    std::cout << "Wrong animal" << std::endl;
+    std::cout << "Wrong Animal voice" << std::endl;
 }

@@ -15,6 +15,9 @@ public:
 
     ~Dog();
 
+    void setBrainIdeas();
+    std::string getBrainIdeas(int index);
+
     void makeSound();
 
 };

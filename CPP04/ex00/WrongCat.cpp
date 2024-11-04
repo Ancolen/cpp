@@ -5,7 +5,7 @@
 
 WrongCat::WrongCat()
 {
-    //this->voice = "WrongCat sound";
+    this->voice = "WrongCat sound";
     this->type = "WrongCat";
     std::cout << "WrongCat ctor called" << std::endl;
 }
@@ -22,7 +22,7 @@ WrongCat &WrongCat::operator=(const WrongCat &other)
     if(this != &other)
     {
         this->type = other.type;
-        //this->voice = other.voice;
+        this->voice = other.voice;
     }
     return *this;
 }
@@ -34,5 +34,5 @@ WrongCat::~WrongCat()
 
 void WrongCat::makeSound()
 {
-    std::cout << "Meow!" << std::endl;
+    std::cout << this->voice << std::endl;
 }

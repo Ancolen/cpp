@@ -1,14 +1,18 @@
 
-
+#pragma once
 #include "IMateriaSource.hpp"
+#include "AMateria.hpp"
 
-class MateriaSource : IMateriaSource
+class MateriaSource : public IMateriaSource
 {
 private:
-    /* data */
+    int     count;
+    AMateria *materia[100];
 public:
     MateriaSource();
-    void learnMateria(AMateria*);
-    AMateria* createMateria(const std::string& type);
+    MateriaSource(const MateriaSource& other);
     ~MateriaSource();
+    MateriaSource& operator=(const MateriaSource& other);
+    void learnMateria(AMateria *a);
+    AMateria* createMateria(const std::string& type);
 };

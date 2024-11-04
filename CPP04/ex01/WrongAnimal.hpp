@@ -7,7 +7,7 @@ class WrongAnimal
 {
 protected:
     std::string type;
-    //std::string voice;
+    std::string voice;
 public:
     WrongAnimal();
     WrongAnimal(const WrongAnimal& copy);
