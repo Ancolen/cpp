@@ -72,7 +72,7 @@ std::ostream& operator<<(std::ostream& out, Bureaucrat& bureaucrat)
     return out;
 }
 
-void Bureaucrat::signForm(Form &f)
+void Bureaucrat::signAForm(AForm &f)
 {
     f.beSigned(*this);
     if(f.getSignatureStatus())

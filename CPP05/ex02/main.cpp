@@ -1,7 +1,7 @@
         
 #include <iostream>
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 int main() // makro atanabilir 1-150
 {
@@ -19,44 +19,44 @@ int main() // makro atanabilir 1-150
         std::cerr << "Exception while creating Bureaucrat: " << e.what() << std::endl;
     }
 
-    // Form oluşturma ve başlangıç durumunu yazdırma
+    // AForm oluşturma ve başlangıç durumunu yazdırma
     try
     {
-        Form taxForm("Tax Form", 50, 30);
-        std::cout << taxForm << std::endl;
+        AForm taxAForm("Tax AForm", 50, 30);
+        std::cout << taxAForm << std::endl;
 
-        Form visaForm("Visa Form", 145, 142);
-        std::cout << visaForm << std::endl;
+        AForm visaAForm("Visa AForm", 145, 142);
+        std::cout << visaAForm << std::endl;
     }
     catch (const std::exception &e)
     {
-        std::cerr << "Exception while creating Form: " << e.what() << std::endl;
+        std::cerr << "Exception while creating AForm: " << e.what() << std::endl;
     }
 
-    // Formları imzalama işlemlerini test etme
+    // AFormları imzalama işlemlerini test etme
     try
     {
         Bureaucrat alice("Alice", 10);
-        Form taxForm("Tax Form", 50, 30);
+        AForm taxAForm("Tax AForm", 50, 30);
 
-        alice.signForm(taxForm); // Alice başarılı bir şekilde imzalar
-        std::cout << taxForm << std::endl;
+        alice.signAForm(taxAForm); // Alice başarılı bir şekilde imzalar
+        std::cout << taxAForm << std::endl;
     }
     catch (const std::exception &e)
     {
-        std::cerr << "Exception while signing form: " << e.what() << std::endl;
+        std::cerr << "Exception while signing AForm: " << e.what() << std::endl;
     }
 
     try
     {
         Bureaucrat bob("Bob", 140);
-        Form taxForm("Tax Form", 50, 30);
+        AForm taxAForm("Tax AForm", 50, 30);
 
-        bob.signForm(taxForm); // Bob başarısız olur
+        bob.signAForm(taxAForm); // Bob başarısız olur
     }
     catch (const std::exception &e)
     {
-        std::cerr << "Exception while signing form: " << e.what() << std::endl;
+        std::cerr << "Exception while signing AForm: " << e.what() << std::endl;
     }
 
     // Bureaucrat grade artırma/azaltma testleri
@@ -86,23 +86,23 @@ int main() // makro atanabilir 1-150
         std::cerr << "Exception while adjusting grade: " << e.what() << std::endl;
     }
 
-    // Geçersiz Form oluşturma testleri
+    // Geçersiz AForm oluşturma testleri
     try
     {
-        Form invalidForm("Invalid Form", 200, 150); // Grade çok düşük
+        AForm invalidAForm("Invalid AForm", 200, 150); // Grade çok düşük
     }
     catch (const std::exception &e)
     {
-        std::cerr << "Exception while creating invalid form: " << e.what() << std::endl;
+        std::cerr << "Exception while creating invalid AForm: " << e.what() << std::endl;
     }
 
     try
     {
-        Form invalidForm("Invalid Form", 0, 50); // Grade çok yüksek
+        AForm invalidAForm("Invalid AForm", 0, 50); // Grade çok yüksek
     }
     catch (const std::exception &e)
     {
-        std::cerr << "Exception while creating invalid form: " << e.what() << std::endl;
+        std::cerr << "Exception while creating invalid AForm: " << e.what() << std::endl;
     }
 
     std::cout << "All tests completed successfully." << std::endl;

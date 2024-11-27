@@ -2,10 +2,10 @@
 
 #pragma once
 
-#include "Form.hpp"
+#include "AForm.hpp"
 #include <iostream>
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -25,7 +25,7 @@ public:
     void        setGrade  (int grade);
     void        raiseGrade(         );
     void        dropGrade (         );
-    void        signForm  (Form &f  );
+    void        signAForm  (AForm &f  );
 
     class GradeTooHighException : public std::exception {
         const char* what() const throw();

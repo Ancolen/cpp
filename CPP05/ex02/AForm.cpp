@@ -1,10 +1,10 @@
-#include "Form.hpp"
+#include "AForm.hpp"
 
-Form::Form() : _name("default"), _signatureStatus(false), _signatureGrade(1), _executionDegree(2)
+AForm::AForm() : _name("default"), _signatureStatus(false), _signatureGrade(1), _executionDegree(2)
 {
 }
 
-Form::Form(std::string name, int signatureGrade, int executinDegree)
+AForm::AForm(std::string name, int signatureGrade, int executinDegree)
     : _name(name), _signatureStatus(false), _signatureGrade(signatureGrade), _executionDegree(executinDegree)
 { 
     if(signatureGrade > 150)
@@ -13,12 +13,12 @@ Form::Form(std::string name, int signatureGrade, int executinDegree)
         throw GradeTooHighException();
 }
 
-Form::Form(const Form &copy) 
+AForm::AForm(const AForm &copy) 
 : _name(copy._name), _signatureGrade(copy._signatureGrade),
   _signatureStatus(copy._signatureStatus), _executionDegree(copy._executionDegree)
 { }
 
-Form &Form::operator=(const Form &other)
+AForm &AForm::operator=(const AForm &other)
 {
     if(this != &other)
     {
@@ -29,50 +29,50 @@ Form &Form::operator=(const Form &other)
     return *this;
 }
 
-Form::~Form()
+AForm::~AForm()
 {
 }
 
-std::string Form::getName()
+std::string AForm::getName()
 {
     return this->_name;
 }
 
-bool Form::getSignatureStatus()
+bool AForm::getSignatureStatus()
 {
     return this->_signatureStatus;
 }
 
-int Form::getSignatureGrade()
+int AForm::getSignatureGrade()
 {
     return this->_signatureGrade;
 }
 
-int Form::getExecutionDegree()
+int AForm::getExecutionDegree()
 {
     return this->_executionDegree;
 }
 
-void Form::beSigned(Bureaucrat &b)
+void AForm::beSigned(Bureaucrat &b)
 {
     if(b.getGrade() >= this->_signatureGrade)
         throw GradeTooLowException();
     this->_signatureStatus = true;
 }
 
-std::ostream &operator<<(std::ostream &out, Form &form)
+std::ostream &operator<<(std::ostream &out, AForm &AForm)
 {
-    out << "Name: " << form.getName() << ", Signature Status: " << form.getSignatureStatus()
-    << ", Signature Grade: " << form.getSignatureGrade() << ", Execution Degree: " << form.getExecutionDegree();
+    out << "Name: " << AForm.getName() << ", Signature Status: " << AForm.getSignatureStatus()
+    << ", Signature Grade: " << AForm.getSignatureGrade() << ", Execution Degree: " << AForm.getExecutionDegree();
     return out;
 }
 
-const char* Form::GradeTooHighException::what() const throw()
+const char* AForm::GradeTooHighException::what() const throw()
 {
     return "Grade is too high";
 }
 
-const char* Form::GradeTooLowException::what() const throw()
+const char* AForm::GradeTooLowException::what() const throw()
 {
     return "Grade is too low";
 }
