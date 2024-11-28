@@ -1,154 +1,77 @@
-        
-#include <iostream>
 #include "Bureaucrat.hpp"
 #include "PresidentialPardonForm.hpp"
-#include "AForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
-int main() // makro atanabilir 1-150
-{
-    // try
-    // {
-    //     Bureaucrat b1("b1", 2);
-    //     std::cout << b1 << std::endl;
-    // }
-    // catch(const std::exception& e)
-    // {
-    //     std::cerr << "bürokrat oluşturma " << e.what() << std::endl; 
-    // }
-    
+int main() {
+    try {
+        std::cout << "=== Bureaucrat and Form Creation ===" << std::endl;
 
-    // try
-    // {
-    //     PresidentialPardonForm p1("target");
-    //     std::cout << p1.getTarget() << std::endl;
-    // }
-    // catch(const std::exception& e)
-    // {
-    //     std::cerr << "form oluşturma " << e.what() << std::endl;
-    // }
+        Bureaucrat john("John", 50);
+        Bureaucrat alice("Alice", 140);
+        Bureaucrat boss("Boss", 1);
 
-    try
-    {
-        Bureaucrat b1("bureaucrat", 2);
-        PresidentialPardonForm p1("form");
-        b1.signAForm(p1);
-        b1.executeForm(p1);
+        std::cout << john << std::endl;
+        std::cout << alice << std::endl;
+        std::cout << boss << std::endl;
 
+        std::cout << "\n=== Form Creation ===" << std::endl;
+
+        PresidentialPardonForm pardonForm("Alice");
+        RobotomyRequestForm robotomyForm("John");
+        ShrubberyCreationForm shrubberyForm("Home");
+
+        std::cout << pardonForm << std::endl;
+        std::cout << robotomyForm << std::endl;
+        std::cout << shrubberyForm << std::endl;
+
+        std::cout << "\n=== Signing Forms ===" << std::endl;
+
+        alice.signAForm(shrubberyForm); // Successful
+        john.signAForm(robotomyForm);  // Successful
+        try {
+            john.signAForm(pardonForm); // Should throw (grade too low)
+        } catch (const std::exception &e) {
+            std::cerr << e.what() << std::endl;
+        }
+
+        boss.signAForm(pardonForm);    // Successful
+
+        std::cout << "\n=== Executing Forms ===" << std::endl;
+
+        try {
+            alice.executeForm(shrubberyForm); // Should succeed
+        } catch (const std::exception &e) {
+            std::cerr << e.what() << std::endl;
+        }
+
+        try {
+            john.executeForm(robotomyForm); // 50% success chance
+        } catch (const std::exception &e) {
+            std::cerr << e.what() << std::endl;
+        }
+
+        try {
+            john.executeForm(pardonForm); // Should fail (grade too low)
+        } catch (const std::exception &e) {
+            std::cerr << e.what() << std::endl;
+        }
+
+        boss.executeForm(pardonForm); // Should succeed
+
+        std::cout << "\n=== Additional Tests ===" << std::endl;
+
+        try {
+            ShrubberyCreationForm invalidShrubbery("InvalidHome");
+            alice.signAForm(invalidShrubbery);
+            invalidShrubbery.execute(alice); // Should succeed, writes ASCII tree to a file
+        } catch (const std::exception &e) {
+            std::cerr << e.what() << std::endl;
+        }
+
+    } catch (const std::exception &e) {
+        std::cerr << "Unexpected Error: " << e.what() << std::endl;
     }
-    catch(const std::exception& e)
-    {
-        std::cerr << "execute" <<  e.what() << std::endl;
-    }
+
     return 0;
-    
-
-
-
-
-
-
-
-    // // Bureaucrat oluşturma ve başlangıç durumunu yazdırma
-    // try
-    // {
-    //     Bureaucrat alice("Alice", 10);
-    //     std::cout << alice << std::endl;
-
-    //     Bureaucrat bob("Bob", 140);
-    //     std::cout << bob << std::endl;
-    // }
-    // catch (const std::exception &e)
-    // {
-    //     std::cerr << "Exception while creating Bureaucrat: " << e.what() << std::endl;
-    // }
-
-    // // AForm oluşturma ve başlangıç durumunu yazdırma
-    // try
-    // {
-    //     AForm taxAForm("Tax AForm", 50, 30);
-    //     std::cout << taxAForm << std::endl;
-
-    //     AForm visaAForm("Visa AForm", 145, 142);
-    //     std::cout << visaAForm << std::endl;
-    // }
-    // catch (const std::exception &e)
-    // {
-    //     std::cerr << "Exception while creating AForm: " << e.what() << std::endl;
-    // }
-
-    // // AFormları imzalama işlemlerini test etme
-    // try
-    // {
-    //     Bureaucrat alice("Alice", 10);
-    //     AForm taxAForm("Tax AForm", 50, 30);
-
-    //     alice.signAForm(taxAForm); // Alice başarılı bir şekilde imzalar
-    //     std::cout << taxAForm << std::endl;
-    // }
-    // catch (const std::exception &e)
-    // {
-    //     std::cerr << "Exception while signing AForm: " << e.what() << std::endl;
-    // }
-
-    // try
-    // {
-    //     Bureaucrat bob("Bob", 140);
-    //     AForm taxAForm("Tax AForm", 50, 30);
-
-    //     bob.signAForm(taxAForm); // Bob başarısız olur
-    // }
-    // catch (const std::exception &e)
-    // {
-    //     std::cerr << "Exception while signing AForm: " << e.what() << std::endl;
-    // }
-
-    // // Bureaucrat grade artırma/azaltma testleri
-    // try
-    // {
-    //     Bureaucrat alice("Alice", 10);
-
-    //     alice.dropGrade(); // Grade düşürülür: 10 -> 11
-    //     std::cout << alice << std::endl;
-
-    //     alice.raiseGrade(); // Grade artırılır: 11 -> 10
-    //     std::cout << alice << std::endl;
-    // }
-    // catch (const std::exception &e)
-    // {
-    //     std::cerr << "Exception while adjusting grade: " << e.what() << std::endl;
-    // }
-
-    // try
-    // {
-    //     Bureaucrat bob("Bob", 140);
-
-    //     bob.raiseGrade(); 
-    // }
-    // catch (const std::exception &e)
-    // {
-    //     std::cerr << "Exception while adjusting grade: " << e.what() << std::endl;
-    // }
-
-    // // Geçersiz AForm oluşturma testleri
-    // try
-    // {
-    //     AForm invalidAForm("Invalid AForm", 200, 150); // Grade çok düşük
-    // }
-    // catch (const std::exception &e)
-    // {
-    //     std::cerr << "Exception while creating invalid AForm: " << e.what() << std::endl;
-    // }
-
-    // try
-    // {
-    //     AForm invalidAForm("Invalid AForm", 0, 50); // Grade çok yüksek
-    // }
-    // catch (const std::exception &e)
-    // {
-    //     std::cerr << "Exception while creating invalid AForm: " << e.what() << std::endl;
-    // }
-
-    // std::cout << "All tests completed successfully." << std::endl;
-
-    // return 0;
 }
