@@ -21,11 +21,12 @@ public:
     ~Bureaucrat          (                           );
 
     std::string getName   (         );
-    int         getGrade  (         );
+    int         getGrade  (         ) const;
     void        setGrade  (int grade);
     void        raiseGrade(         );
     void        dropGrade (         );
     void        signAForm  (AForm &f  );
+    void        executeForm(AForm const &form);
 
     class GradeTooHighException : public std::exception {
         const char* what() const throw();

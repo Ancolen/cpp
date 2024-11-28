@@ -32,7 +32,7 @@ std::string Bureaucrat::getName()
     return _name;
 }
 
-int Bureaucrat::getGrade()
+int Bureaucrat::getGrade() const
 {
     return _grade;
 }
@@ -78,5 +78,14 @@ void Bureaucrat::signAForm(AForm &f)
     if(f.getSignatureStatus())
         std::cout << this->_name << " signed " << f.getName() << std::endl;
     else
-        std::cout << this->_name << " couldn't sign " << f.getName() << " because " << std::endl;
+        std::cout << this->_name << " couldn't sign " << f.getName() << " because " << std::endl; // buraya bak
+}
+
+void Bureaucrat::executeForm(AForm const &form)
+{
+    form.execute(*this);
+    if(form.getSignatureStatus())
+        std::cout << this->_name << " executed " << form.getName() << std::endl;
+    else
+        std::cout << this->_name << " couldn't execute " << form.getName() << " because " << std::endl; // buraya da        
 }
