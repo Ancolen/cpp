@@ -6,28 +6,41 @@
 
 int main() // makro atanabilir 1-150
 {
-    try
-    {
-        Bureaucrat b1("b1", 15);
-        std::cout << b1 << std::endl;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << "bürokrat oluşturma " << e.what() << std::endl; 
-    }
-    
-    try
-    {
-        PresidentialPardonForm f1("deneme");
-        
-        
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
+    // try
+    // {
+    //     Bureaucrat b1("b1", 2);
+    //     std::cout << b1 << std::endl;
+    // }
+    // catch(const std::exception& e)
+    // {
+    //     std::cerr << "bürokrat oluşturma " << e.what() << std::endl; 
+    // }
     
 
+    // try
+    // {
+    //     PresidentialPardonForm p1("target");
+    //     std::cout << p1.getTarget() << std::endl;
+    // }
+    // catch(const std::exception& e)
+    // {
+    //     std::cerr << "form oluşturma " << e.what() << std::endl;
+    // }
+
+    try
+    {
+        Bureaucrat b1("bureaucrat", 2);
+        PresidentialPardonForm p1("form");
+        b1.signAForm(p1);
+        b1.executeForm(p1);
+
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << "execute" <<  e.what() << std::endl;
+    }
+    return 0;
+    
 
 
 

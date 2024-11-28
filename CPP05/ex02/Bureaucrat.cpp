@@ -1,6 +1,6 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : _name("default"), _grade(150)
+Bureaucrat::Bureaucrat() : Bureaucrat("default", 150)
 {
 }
 
@@ -16,7 +16,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
         throw GradeTooLowException();
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& copy) : _name(copy._name), _grade(copy._grade)
+Bureaucrat::Bureaucrat(const Bureaucrat& copy) : Bureaucrat(copy._name, copy._grade)
 {
 }
 
@@ -27,7 +27,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& copy)
     return *this;
 }
 
-std::string Bureaucrat::getName()
+std::string Bureaucrat::getName() const
 {
     return _name;
 }
@@ -74,18 +74,28 @@ std::ostream& operator<<(std::ostream& out, Bureaucrat& bureaucrat)
 
 void Bureaucrat::signAForm(AForm &f)
 {
-    f.beSigned(*this);
-    if(f.getSignatureStatus())
+    try
+    {
+        f.beSigned(*this);
         std::cout << this->_name << " signed " << f.getName() << std::endl;
-    else
-        std::cout << this->_name << " couldn't sign " << f.getName() << " because " << std::endl; // buraya bak
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << this->_name << " couldn't sign " << f.getName() << " because " << e.what() << std::endl;
+    }
+    
 }
 
 void Bureaucrat::executeForm(AForm const &form)
 {
-    form.execute(*this);
-    if(form.getSignatureStatus())
-        std::cout << this->_name << " executed " << form.getName() << std::endl;
-    else
-        std::cout << this->_name << " couldn't execute " << form.getName() << " because " << std::endl; // buraya da        
+    try
+    {
+        form.execute(*this);
+        std::cout << this->_name << " executes " << form.getName() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << this->_name << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
+    }
+    
 }

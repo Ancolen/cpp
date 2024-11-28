@@ -1,11 +1,10 @@
 #include "AForm.hpp"
 
-AForm::AForm() : _name("default"), _signatureStatus(false), _signatureGrade(1), _executionDegree(2)
-{
-}
+AForm::AForm() : AForm("default", 150, 150)
+{ }
 
-AForm::AForm(std::string name, int signatureGrade, int executinDegree)
-    : _name(name), _signatureStatus(false), _signatureGrade(signatureGrade), _executionDegree(executinDegree)
+AForm::AForm(std::string name, int signatureGrade, int executionDegree)
+    : _name(name), _signatureStatus(false), _signatureGrade(signatureGrade), _executionDegree(executionDegree)
 { 
     if(signatureGrade > 150)
         throw GradeTooLowException ();
@@ -13,9 +12,11 @@ AForm::AForm(std::string name, int signatureGrade, int executinDegree)
         throw GradeTooHighException();
 }
 
-AForm::AForm(const AForm &copy) 
-: _name(copy._name), _signatureGrade(copy._signatureGrade),
-  _signatureStatus(copy._signatureStatus), _executionDegree(copy._executionDegree)
+AForm::AForm(const AForm &copy)
+    : AForm(copy._name, copy._signatureGrade, copy._executionDegree)
+{ }
+
+AForm::~AForm()
 { }
 
 AForm &AForm::operator=(const AForm &other)
@@ -27,10 +28,6 @@ AForm &AForm::operator=(const AForm &other)
         this->_signatureGrade  = other._signatureGrade ;
     }
     return *this;
-}
-
-AForm::~AForm()
-{
 }
 
 std::string AForm::getName() const
@@ -54,31 +51,26 @@ int AForm::getExecutionDegree() const
 }
 
 void AForm::beSigned(Bureaucrat &b)
-{
+{   
     if(b.getGrade() >= this->_signatureGrade)
         throw GradeTooLowException();
     this->_signatureStatus = true;
 }
 
-void AForm::setSignatureStatus(bool x)
-{
-    this->_signatureStatus = x;
-}
+// void AForm::setSignatureStatus(bool x)
+// {
+//     this->_signatureStatus = x;
+// }
 
-void AForm::setSignatureGrade(int grade)
-{
-    this->_signatureGrade = grade;
-}
+// void AForm::setSignatureGrade(int grade)
+// {
+//     this->_signatureGrade = grade;
+// }
 
-void AForm::setExecutionDegree(int degree)
-{
-    this->_executionDegree = degree;
-}
-
-void AForm::setName(std::string name)
-{
-    // this->_name = name;
-}
+// void AForm::setExecutionDegree(int degree)
+// {
+//     this->_executionDegree = degree;
+// }
 
 void AForm::execute(const Bureaucrat &executor) const
 {
@@ -91,8 +83,10 @@ void AForm::execute(const Bureaucrat &executor) const
 
 std::ostream &operator<<(std::ostream &out, AForm &AForm)
 {
-    out << "Name: " << AForm.getName() << ", Signature Status: " << AForm.getSignatureStatus()
-    << ", Signature Grade: " << AForm.getSignatureGrade() << ", Execution Degree: " << AForm.getExecutionDegree();
+    out << "Name: " << AForm.getName()
+        << ", Signature Status: " << (AForm.getSignatureStatus() ? "Signed" : "Not Signed")
+        << ", Signature Grade: " << AForm.getSignatureGrade()
+        << ", Execution Degree: " << AForm.getExecutionDegree();
     return out;
 }
 
